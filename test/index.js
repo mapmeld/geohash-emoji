@@ -19,6 +19,11 @@ describe("emoji picking", function() {
     assert.equal(0x1F57C + "-", ret);
   });
   
+  it("no substitute for pile of poo", function() {
+    var ret = emojiAt(425);
+    assert.equal(0x1F4A9 + "-", ret);
+  });
+  
   it("returns first emoticon - grinning face - for 766", function() {
     var ret = emojiAt(766);
     assert.equal(0x1F600 + "-", ret);
@@ -39,5 +44,10 @@ describe("coordinate system", function() {
   it("returns 31st misc symbol - sun with face - for the next square to the north", function() {
     var ret = coordAt(-84, -179);
     assert.equal(0x1F31E + "", ret.split("-")[0]);
+  });
+  
+  it("substitute for pile of poo", function() {
+    var ret = coordAt(-4, -118);
+    assert.equal(0x1F6B7 + "", ret.split("-")[0]);
   });
 });

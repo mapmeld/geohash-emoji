@@ -54,6 +54,13 @@ var coordAt = function(lat, lng, precision) {
   // emoji grid reference
   var emojiHeight = 30;
   var emojiWidth = 30;
+  
+  var substitutes = {
+    // love hotel replaced by walking person
+	"127977": 0x1F6B6,
+	// pile of poo replaced by no-walking sign
+	"128169": 0x1F6B7
+  };
 
   precision = precision || 3;
   var hash = "";
@@ -70,7 +77,11 @@ var coordAt = function(lat, lng, precision) {
     // console.log("zoom " + (i+1) + ": at " + (latRow+1) + "th row, " + (lngColumn+1) + "th column");
 
     // add appropriate emoji to hash
-    hash += emojiAt(emojiWidth * latRow + lngColumn);
+    var newc = emojiAt(emojiWidth * latRow + lngColumn);
+    if (substitutes[newc.replace("-", "")]) {
+      newc = substitutes[newc.replace("-", "")] + "-";
+    }
+    hash += newc;
 
     // calculate next box of the grid
     var gridHeight = (north - south) / emojiHeight;
