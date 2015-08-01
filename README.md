@@ -32,7 +32,8 @@ Find your latitude and longitude. If I am at 40.1 degrees North, 93.7 degrees
 West, then I can run this on the command line:
 
 ```bash
-node geohash.js 40.1 -93.7
+node geohash.js 19.6968708 96.1249349
+> 🔳🏰💭
 ```
 
 In NodeJS:
