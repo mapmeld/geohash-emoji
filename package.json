@@ -14,5 +14,8 @@
   "license": "WTFPL",
   "devDependencies": {
     "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "string.fromcodepoint": "^0.2.1"
   }
 }

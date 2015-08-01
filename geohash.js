@@ -1,3 +1,7 @@
+if (!String.fromCodePoint) {
+  require('String.fromCodePoint');
+}
+
 // reference emoji
 var emojiAt = function (order, block) {
   // emoji blocks, in order, with start, missing blocks, and symbol length
@@ -46,7 +50,7 @@ var emojiAt = function (order, block) {
 	    break;
 	  }
     }
-    return nth + "-"; // String.fromCodePoint(nth);
+    return String.fromCodePoint(nth);
   }
 };
 
@@ -55,12 +59,11 @@ var coordAt = function(lat, lng, precision) {
   var emojiHeight = 30;
   var emojiWidth = 30;
   
-  var substitutes = {
-    // love hotel replaced by walking person
-	"127977": 0x1F6B6,
-	// pile of poo replaced by no-walking sign
-	"128169": 0x1F6B7
-  };
+  var substitutes = {};
+  // love hotel replaced by walking person
+  substitutes[String.fromCodePoint(127977)] = String.fromCodePoint(0x1F6B6);
+  // pile of poo replaced by no-walking sign
+  substitutes[String.fromCodePoint(128169)] = String.fromCodePoint(0x1F6B7);
 
   precision = precision || 3;
   var hash = "";
@@ -78,8 +81,8 @@ var coordAt = function(lat, lng, precision) {
 
     // add appropriate emoji to hash
     var newc = emojiAt(emojiWidth * latRow + lngColumn);
-    if (substitutes[newc.replace("-", "")]) {
-      newc = substitutes[newc.replace("-", "")] + "-";
+    if (substitutes[newc]) {
+      newc = substitutes[newc];
     }
     hash += newc;
 
