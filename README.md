@@ -18,7 +18,7 @@ followed by 80 emoticons, then the first 54 Transport and Map Symbols. As
 the spec gets defined, some emoji (such as Pile of Poo and Love Hotel) may
 be substituted for other Transport and Map Symbol characters.
 
-## Install 
+## Install
 
 ```bash
 npm install
@@ -61,4 +61,4 @@ npm test
 
 ## License
 
-WTFPL because WTF
+MIT License
