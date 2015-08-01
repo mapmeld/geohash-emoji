@@ -1,7 +1,9 @@
 # geohash-emoji
 
-Implementing Lou Huang's What3Emojis coordinates with a geohash, calculated
-using NodeJS
+Implementing <a href="https://github.com/louh/what3emojis">Lou Huang's What3Emojis</a>
+coordinates with a geohash, calculated using NodeJS
+
+These are not official three emoji coordinates yet!
 
 ## Implementation
 
