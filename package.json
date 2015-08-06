@@ -17,5 +17,6 @@
   },
   "dependencies": {
     "string.fromcodepoint": "^0.2.1"
-  }
+  },
+  "main": "geohash.js"
 }
