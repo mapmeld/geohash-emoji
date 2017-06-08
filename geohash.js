@@ -1,5 +1,5 @@
 if (!String.fromCodePoint) {
-  require('String.fromCodePoint');
+  require('string.fromcodepoint');
 }
 
 // reference emoji
