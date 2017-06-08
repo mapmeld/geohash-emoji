@@ -1,7 +1,7 @@
 var assert = require("assert");
 var coordAt = require("../geohash").coordAt;
 var emojiAt = require("../geohash").emojiAt;
-require('String.fromCodePoint');
+require('string.fromcodepoint');
 
 describe("emoji picking", function() {
   it("returns first misc symbol - a cyclone - for 0", function() {
