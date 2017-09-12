@@ -1,5 +1,7 @@
 # geohash-emoji
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mapmeld/geohash-emoji.svg)](https://greenkeeper.io/)
+
 Implementing <a href="https://github.com/louh/what3emojis">Lou Huang's What3Emojis</a>
 coordinates with a geohash, calculated using NodeJS
 
