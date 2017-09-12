@@ -13,7 +13,7 @@
   "author": "Nick Doiron <ndoiron@mapmeld.com>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "^3.5.3"
   },
   "dependencies": {
     "string.fromcodepoint": "^0.2.1"
