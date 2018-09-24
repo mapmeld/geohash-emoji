@@ -104,10 +104,10 @@ if (process.argv.length < 4) {
   var lat = process.argv[2] * 1;
   var lng = process.argv[3] * 1;
   if (isNaN(lat) || isNaN(lng)) {
-    return console.log("use syntax: node geohash.js LATITUDE LONGITUDE"); 
+    console.log("use syntax: node geohash.js LATITUDE LONGITUDE"); 
+  } else {
+    console.log( coordAt( lat, lng ) );
   }
-  
-  console.log( coordAt( lat, lng ) );
 }
 
 if (typeof exports !== "undefined") {
