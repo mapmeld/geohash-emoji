@@ -1,6 +1,6 @@
 {
   "name": "geohash-emoji",
-  "version": "1.3.2",
+  "version": "1.4.2",
   "description": "Divide the earth into three emoji coordinates",
   "scripts": {
     "test": "mocha"
@@ -13,7 +13,7 @@
   "author": "Nick Doiron <ndoiron@mapmeld.com>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "string.fromcodepoint": "^0.2.1"
