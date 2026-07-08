@@ -1,9 +1,5 @@
-var assert = require("assert");
-var coordAt = require("../geohash").coordAt;
-var emojiAt = require("../geohash").emojiAt;
-var orderFrom = require("../geohash").orderFrom;
-var coordFromHash = require("../geohash").coordFromHash;
-require('string.fromcodepoint');
+import assert from 'node:assert';
+import { coordAt, emojiAt, orderFrom, coordFromHash } from '../geohash.js';
 
 function assertFloatEquals(expected, actual, within) {
   within = within || 0.0001;
@@ -80,5 +76,10 @@ describe("reversibility", function() {
     assertFloatEquals(0, result[1], 0.1);
     assert.equal(3, result[2]);
   });
-});
 
+  it("can reverse transport symbols", function () {
+    var coord = coordFromHash("🐼😲🚝");
+    var symbols = coordAt(coord[0], coord[1], 3);
+    assert.equal('🐼😲🚝', symbols);
+  });
+});

@@ -121,17 +121,25 @@ var coordAt = function(lat, lng, precision) {
 
 function orderFrom(emoji) {
   var codePoint = emoji.codePointAt(0);
-  var eBlocks= emojiBlocks();
+  var eBlocks = emojiBlocks();
+  var globalOffset = 0; // Track total emojis from preceding blocks
 
   for (var block in eBlocks) {
-    if (codePoint >= eBlocks[block].start &&
-      codePoint < eBlocks[block].start + eBlocks[block].count + eBlocks[block].missing.length) {
-      var order = codePoint - eBlocks[block].start;
-      for (var i = 0; i < eBlocks[block].missing.length && eBlocks[block].missing[i] <= codePoint; i++) {
-        order--;
+      if (codePoint >= eBlocks[block].start &&
+          codePoint < eBlocks[block].start + eBlocks[block].count + eBlocks[block].missing.length) {
+
+          var order = codePoint - eBlocks[block].start;
+
+          // Adjust for any missing codepoints in this block
+          for (var i = 0; i < eBlocks[block].missing.length && eBlocks[block].missing[i] <= codePoint; i++) {
+              order--;
+          }
+
+          // Return the local order PLUS the count of all previous blocks
+          return globalOffset + order;
       }
-      return order;
-    }
+      // Add this block's count to the global offset for the next iteration
+      globalOffset += eBlocks[block].count;
   }
   return null;
 }
