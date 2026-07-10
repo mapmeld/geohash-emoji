@@ -24,9 +24,9 @@ be substituted for other Transport and Map Symbol characters.
 npm install
 ```
 
-If you use the browser, also include a
+If you use the browser, you made need a
 <a href="https://github.com/mathiasbynens/String.fromCodePoint">String.fromCodePoint polyfill</a>
-for older browsers:
+for very old browsers.
 
 ## Run
 

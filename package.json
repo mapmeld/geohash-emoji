@@ -1,6 +1,6 @@
 {
   "name": "geohash-emoji",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Divide the earth into three emoji coordinates",
   "scripts": {
     "test": "mocha"

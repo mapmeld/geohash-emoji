@@ -1,7 +1,3 @@
-if (!String.fromCodePoint) {
-  require('string.fromcodepoint');
-}
-
 function emojiSize() {
   // height, width
   return {
